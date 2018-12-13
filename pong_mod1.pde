@@ -99,5 +99,4 @@ void draw() {
     noStroke();
     rect(width/2, i, 10, 20);
   }
-  //i tried to fit this into the class update, but I kept getting a null pointer exception
 }

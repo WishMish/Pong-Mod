@@ -47,8 +47,8 @@ class Ball2 {
   }
 
   void display() {
-    rectMode(CENTER);
+    ellipseMode(CENTER);
     fill(255);
-    rect(pos.x, pos.y, 25, 25);
+    ellipse(pos.x, pos.y, 25, 25);
   }
 }
