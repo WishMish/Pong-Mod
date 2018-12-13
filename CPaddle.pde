@@ -28,7 +28,7 @@ class Paddle {
       }
     }
     if (whichPlayer ==2) {
-      if (left && pos.x>width/2) {
+      if (left && pos.x>width/2 +15) {
         pos.x -= 5;
       }
       if (right && pos.x + w < width-5) {

@@ -1,6 +1,6 @@
 class Ball2 {
   PVector pos, vel;
-
+  float speed = 5;
   Ball2() {
     restart();
   }
@@ -9,7 +9,7 @@ class Ball2 {
     angle = random(70, 130);
     pos = new PVector(width/2 + width/4, height/8);
     vel = new PVector();
-    float speed = 5;
+
     vel.x = cos(radians(angle));
     vel.y = sin(radians(angle));
     vel.mult(speed);
@@ -18,14 +18,14 @@ class Ball2 {
   void checkCollision(Paddle p) {
     if (ball2.pos.x < (p.pos.x + p.w) && 
       ball2.pos.x > (p.pos.x) &&
-      ball2.pos.y > (p.pos.y) && 
+      ball2.pos.y > (p.pos.y - 20) && 
       ball2.pos.y < (p.pos.y + p.h)) {
       ball2.vel.y = -ball1.vel.y;
+      vel.mult((speed/4));
       p2.w-=10;
-      if(p2.w<30){
+      if (p2.w<30) {
         p2.w=30;
       }
-      
     }
   }
 
@@ -36,7 +36,7 @@ class Ball2 {
     if (pos.y < 0) {
       vel.y = -vel.y;
     }
-    
+
     pos.add(vel);
 
     if (pos.y > height) {
